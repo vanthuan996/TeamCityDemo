@@ -6,8 +6,8 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["TeamCityDemo/TeamCityDemo.csproj", "TeamCityDemo/"]
-RUN dotnet restore "TeamCityDemo/TeamCityDemo.csproj"
+COPY ["TeamCityDemo.csproj", "TeamCityDemo/"]
+RUN dotnet restore "TeamCityDemo.csproj"
 COPY . .
 WORKDIR "/src/TeamCityDemo"
 RUN dotnet build "TeamCityDemo.csproj" -c Release -o /app/build
