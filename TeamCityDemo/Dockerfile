@@ -5,9 +5,9 @@ WORKDIR /app
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src/TeamCityDemo
+WORKDIR /src
 COPY ["TeamCityDemo.csproj", "TeamCityDemo/"]
-RUN dotnet restore "TeamCityDemo.csproj"
+RUN dotnet restore "TeamCityDemo/TeamCityDemo.csproj"
 COPY . .
 WORKDIR "/src/TeamCityDemo"
 RUN dotnet build "TeamCityDemo.csproj" -c Release -o /app/build
