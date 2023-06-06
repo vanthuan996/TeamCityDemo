@@ -1,10 +1,9 @@
-public static class Program
+public class Program
 {
     /// <summary>
     /// The main entry point for the application.
     /// </summary>
-    [STAThread]
-    public static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
         // Add services to the container.
